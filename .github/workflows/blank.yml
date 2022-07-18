@@ -11,6 +11,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Build, tag, and push image to Amazon ECR
+      run: echo Setting Vars for Testing
       env:
         ECR_REGISTRY: my-registry
         ECR_REPOSITORY: mytunes-downloader
