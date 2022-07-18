@@ -11,11 +11,14 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Build, tag, and push image to Amazon ECR
-      run: echo Setting Vars for Testing
       env:
         ECR_REGISTRY: my-registry
         ECR_REPOSITORY: mytunes-downloader
         IMAGE_TAG: ${{ github.sha }}
+      run: |
+        echo Following is the Payload
+        echo '{ "image_uri": "${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}" }'
+        echo "$ECR_REGISTRY/ECR_REPOSITORY:$IMAGE_TAG"
 
     - name: Run a multi-line script
       run: |
