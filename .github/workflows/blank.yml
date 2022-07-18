@@ -20,4 +20,4 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo Following is the Payload
-        echo '{ "image_uri": "${{ ECR_REGISTRY }}/${{ ECR_REPOSITORY }}:${{ IMAGE_TAG }}" }'
+        echo '{ "image_uri": "${{ $ECR_REGISTRY }}/${{ $ECR_REPOSITORY }}:${{ $IMAGE_TAG }}" }'
